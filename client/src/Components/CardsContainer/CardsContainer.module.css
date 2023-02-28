@@ -1,0 +1,11 @@
+.container{
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    gap: 1em;
+}

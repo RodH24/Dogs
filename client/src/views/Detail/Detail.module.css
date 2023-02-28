@@ -1,0 +1,12 @@
+.divDetails {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    position: relative;
+    display: inline-block;
+    margin: 40px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    width: 420px;
+
+}
