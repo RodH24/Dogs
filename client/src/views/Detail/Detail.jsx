@@ -8,7 +8,7 @@ const Detail = ()=>{
     const { detailId } = useParams();
     const [dog, setDog] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:3001/dogs/${detailId}`)
+        fetch(`http://localhost:3001/pi/dogs/${detailId}`)
             .then((response) => response.json())
             .then((dog) => {
                 if (dog.name) {

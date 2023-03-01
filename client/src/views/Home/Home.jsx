@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getDogs, getTemperaments } from "../../redux/actions";
 import { useSelector } from "react-redux";
+import SearchBar from "../../Components/SearchBar/SearchBar";
 
 
 const Home = ()=>{
@@ -22,6 +23,7 @@ const Home = ()=>{
     
     return(
         <>
+        <SearchBar />
             <CardsContainer />
         </>
     )

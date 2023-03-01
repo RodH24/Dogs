@@ -21,38 +21,8 @@ export const getUser =(id) =>{
 export const GET_TEMPERAMENTS = "TEMPERAMENTS";
 export const getTemperaments =(temperaments) =>{
     return async function (dispatch){
-        const apiData = await axios.get('http://localhost:3001/pi/temperament');
+        const apiData = await axios.get('http://localhost:3001/pi/temperaments');
         const list = apiData.data;
         dispatch({ type: GET_TEMPERAMENTS, payload: list });
     };
 };
-
-// export const GET_FILTER_T = "FILTER_T";
-// export const getFilterT =(temperament) =>{
-//     return {
-//         type: "getFilterT",
-//         payload: temperament
-//     }
-// }
-
-
-// export const orderByOrigin=(origin) =>{
-//     return {
-//         type: "oderByOrigin",
-//         payload: origin
-//     }
-// }
-
-// export const orderByName=(order) =>{
-//     return {
-//         type: "orderByName",
-//         payload: order
-//     }
-// }
-
-// export const orderByWeight=(order) =>{
-//     return {
-//         type: "oderByWeight",
-//         payload: order
-//     }
-// }

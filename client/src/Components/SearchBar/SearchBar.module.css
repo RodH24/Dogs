@@ -1,0 +1,14 @@
+.searchButton {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: #0099ff;
+    color: white;
+    font: 'trebuchet ms', trebuchet;
+    padding: 2px 12px;
+    border-radius: 0 10px 10px 0;
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    -o-border-radius: 0 10px 10px 0;
+    border: 0 none;
+    font-weight: bold;
+}
