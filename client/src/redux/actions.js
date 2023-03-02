@@ -36,8 +36,14 @@ export const getFiltT = (temperament) =>{
 
 export const GET_SORT = "GET_SORT";
 export const getSort = ({isAsc, isByName}) =>{ 
-    console.log(isAsc, isByName);
     return async function (dispatch){ 
     dispatch({ type: GET_SORT, payload: {isAsc, isByName}});
+};
+};
+
+export const GET_PAGES = "GET_PAGES";
+export const getPages = ({sizePage, currentPage}) =>{ 
+    return async function (dispatch){ 
+    dispatch({ type: GET_PAGES, payload: {sizePage, currentPage}});
 };
 };

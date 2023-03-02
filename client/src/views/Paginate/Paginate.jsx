@@ -1,23 +1,30 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getPages } from "../../redux/actions";
 
-const Paginate = (characterPerPage, allCharacters, paginate) =>{
-    const pageNumbers= []
+const Paginate = (characterPerPage, allCharacters, paginate) => {
+  const numberOfPage = useSelector((state) => state.numberOfPage);
+  const dispatch = useDispatch();
 
-    for (let i=0; i<Math.ceil(allCharacters/characterPerPage); i++){
-        pageNumbers.push(i)
-    }
-    return(
-        <nav>
-            <ul className='Paginado'>
-                { pageNumbers &&
-                pageNumbers.map(number =>(
-                    <li className='number' key={number}>
-                        <a onClick={() => paginate(number)}>{number}</a>
-                    </li>
-                ))}
-            </ul>
-        </nav>
-    )
-}
+  return (
+    <nav>
+      {" "}
+      <label> PAGINADO</label>
+      <ul className="Paginado">
+        {numberOfPage &&
+          [...Array(numberOfPage)].map((element, number) => (
+            <button
+              onClick={() => {
+                dispatch(getPages({sizePage:10, currentPage:number}))
+              }}
+            >
+              {" "}
+              {number + 1}{" "}
+            </button>
+          ))}
+      </ul>
+    </nav>
+  );
+};
 
 export default Paginate;

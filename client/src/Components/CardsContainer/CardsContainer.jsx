@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 
 const CardsContainer = () => {
-  const users = useSelector((state) => state.filter);
+  const users = useSelector((state) => state.paginated);
   const temperaments = useSelector((state) => state.temperaments);
   const dispatch = useDispatch();
   const [filt, setfilt] = useState("Todos");
@@ -42,7 +42,6 @@ const CardsContainer = () => {
         onChange={(event) => {
         const auxsort = event.target.value;
           setsort(event.target.value);
-          console.log(auxsort);
           dispatch(
             getSort({
               isAsc: auxsort === "asc" || auxsort === "bylw",
