@@ -21,8 +21,23 @@ export const getUser =(id) =>{
 export const GET_TEMPERAMENTS = "TEMPERAMENTS";
 export const getTemperaments =(temperaments) =>{
     return async function (dispatch){
-        const apiData = await axios.get('http://localhost:3001/pi/temperaments');
+        const apiData = await axios.get('http://localhost:3001/pi/temperament');
         const list = apiData.data;
         dispatch({ type: GET_TEMPERAMENTS, payload: list });
     };
+};
+
+export const GET_FILT_T = "GET_FILT_T";
+export const getFiltT = (temperament) =>{
+    return async function (dispatch){ 
+    dispatch({ type: GET_FILT_T, payload: temperament });
+};
+};
+
+export const GET_SORT = "GET_SORT";
+export const getSort = ({isAsc, isByName}) =>{ 
+    console.log(isAsc, isByName);
+    return async function (dispatch){ 
+    dispatch({ type: GET_SORT, payload: {isAsc, isByName}});
+};
 };

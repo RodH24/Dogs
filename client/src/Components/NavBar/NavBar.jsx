@@ -4,9 +4,8 @@ import style from "./NavBar.module.css"
 const NavBar = () =>{
     return(
         <div className={style.mainContainer}>
-            <Link to="/home">HOME</Link>
             <Link to="/detail">DETAIL</Link>
-            <Link to="/form">FORM</Link>
+            <Link to="/form">NUEVO PERRO</Link>
         </div>
     )
 }
