@@ -29,6 +29,7 @@ const Detail = ()=>{
 
             <div>
                 <div className={styles.divDetails}>
+                    <img className={styles.img} src={dog.image}></img>
                     <h1 >Name: {dog.name}</h1>
                     <h2>ID: {dog.id}</h2>
                     <h2>Height: {dog.height} cm</h2>

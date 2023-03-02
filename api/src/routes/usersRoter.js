@@ -9,7 +9,7 @@ const usersRouter = Router();
 
 usersRouter.get("/dogs", getDogs);
 
-usersRouter.get('/dogs/:idRaza', getDogId);
+usersRouter.get('/dogs/:raceId', getDogId);
 
 usersRouter.get('/dogs/name?=', getDogName);
 

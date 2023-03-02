@@ -9,7 +9,6 @@ const Paginate = (characterPerPage, allCharacters, paginate) => {
   return (
     <nav>
       {" "}
-      <label> PAGINADO</label>
       <ul className="Paginado">
         {numberOfPage &&
           [...Array(numberOfPage)].map((element, number) => (

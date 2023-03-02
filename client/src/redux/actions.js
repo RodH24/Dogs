@@ -9,12 +9,12 @@ export const getDogs = () =>{
     };
 };
 
-export const ID_USER = "ID_SER";
-export const getUser =(id) =>{
+export const GET_ONE_DOG = "GET_ONE_DOG";
+export const getOneDog =(id) =>{
     return async function (dispatch){
         const apiData = await axios.get('http://localhost:3001/pi/dogs/${id}');
         const users = apiData.data;
-        dispatch({ type: ID_USER, payload: users });
+        dispatch({ type: GET_ONE_DOG, payload: users });
     };
 };
 
@@ -26,6 +26,7 @@ export const getTemperaments =(temperaments) =>{
         dispatch({ type: GET_TEMPERAMENTS, payload: list });
     };
 };
+
 
 export const GET_FILT_T = "GET_FILT_T";
 export const getFiltT = (temperament) =>{
@@ -47,3 +48,10 @@ export const getPages = ({sizePage, currentPage}) =>{
     dispatch({ type: GET_PAGES, payload: {sizePage, currentPage}});
 };
 };
+
+export const CHANGE_ORIGIN = "CHANGE_ORIGIN";
+export const changeOrigin = (isFromApi) =>{
+    return async function(dispatch){
+        dispatch({type: CHANGE_ORIGIN, payload: isFromApi});
+    }
+}

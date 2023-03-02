@@ -18,9 +18,18 @@ const getDogs = async (req, res) => {
                 life_span: dog.life_span
             })
         })
-        let allDogs = allDogsApi.concat(allDogsDB);
 
-        res.status(200).json(allDogs)
+        allDogsDB = allDogsDB.map(dog => {
+            return ({
+                id: dog.id,
+                image: dog.image,
+                name: dog.name,
+                height: `${dog.min_height} - ${dog.max_height}`,
+                weight: `${dog.min_weight} - ${dog.max_weight}`,
+                life_span: `${dog.min_life_span} - ${dog.max_life_span}`,
+            })
+        })
+        res.status(200).json({allDogsApi:allDogsApi, allDogsDB})
 
     } catch (error) {
         res.status(500).json({ error: error.message })

@@ -12,7 +12,8 @@ const getDogId = async (req, res) => {
             res.status(200).json({
                 id: findRace.id,
                 image: findRace.image.url,
-                name: findRace.height.metric,
+                name: findRace.name,
+                height: findRace.height.metric,
                 weight: findRace.weight.metric,
                 life_span: findRace.life_span,
                 temperaments: findRace.temperament
